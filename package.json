@@ -1,0 +1,27 @@
+{
+  "name": "is-generator",
+  "version": "0.0.0",
+  "description": "Check whether a function is a generator",
+  "main": "is-generator.js",
+  "scripts": {
+    "test": "node --harmony-generators node_modules/.bin/istanbul cover _mocha --require . -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/is-generator.git"
+  },
+  "keywords": [
+    "function",
+    "generators"
+  ],
+  "author": "Blake Embrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/is-generator/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/is-generator",
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "istanbul": "git://github.com/gotwarlost/istanbul#harmony"
+  }
+}
