@@ -1,6 +1,6 @@
 # is-generator
 
-Check whether a given value is a generator.
+Check whether a value is a generator or generator function.
 
 ## Installation
 
