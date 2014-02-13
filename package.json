@@ -1,7 +1,7 @@
 {
   "name": "is-generator",
   "version": "0.0.1",
-  "description": "Check whether a function is a generator",
+  "description": "Check whether a value is a generator or generator function",
   "main": "is-generator.js",
   "scripts": {
     "test": "node --harmony-generators node_modules/.bin/istanbul cover _mocha --require . -- -R spec"
