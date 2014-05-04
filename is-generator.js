@@ -5,7 +5,7 @@
  * @return {Boolean}
  */
 exports = module.exports = function (obj) {
-  return typeof obj === 'function' &&
+  return obj &&
     typeof obj.next === 'function' &&
     typeof obj.throw === 'function';
 };

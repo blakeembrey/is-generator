@@ -14,7 +14,7 @@ describe('is-generator', function () {
     });
 
     it('should return true with a generator', function () {
-      assert(!isGenerator((function* () {})()));
+      assert(isGenerator((function* () {})()));
     });
   });
 
