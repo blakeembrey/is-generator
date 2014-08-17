@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/blakeembrey/is-generator",
   "devDependencies": {
-    "mocha": "~1.17.0",
-    "istanbul": "git://github.com/gotwarlost/istanbul#harmony"
+    "istanbul": "git://github.com/gotwarlost/istanbul#harmony",
+    "mocha": "^1.21.4"
   }
 }
