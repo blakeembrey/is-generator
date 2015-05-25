@@ -1,33 +1,33 @@
-/* global describe, it */
+'use strict'
 
-var assert      = require('assert');
-var isGenerator = require('./');
+var test = require('assertit')
+var isGenerator = require('./')
 
-describe('is-generator', function () {
-  describe('generators', function () {
-    it('should return false with non-generators', function () {
-      assert(!isGenerator(null));
-      assert(!isGenerator(25));
-      assert(!isGenerator('test'));
-      assert(!isGenerator(function () {}));
-      assert(!isGenerator(function* () {}));
-    });
+test('is-generator', function () {
+  test('generators', function () {
+    test('should return false with non-generators', function () {
+      test.ok(!isGenerator(null))
+      test.ok(!isGenerator(25))
+      test.ok(!isGenerator('test'))
+      test.ok(!isGenerator(function () {}))
+      test.ok(!isGenerator(function * () {}))
+    })
 
-    it('should return true with a generator', function () {
-      assert(isGenerator((function* () {})()));
-    });
-  });
+    test('should return true with a generator', function () {
+      test.ok(isGenerator((function * () {})()))
+    })
+  })
 
-  describe('generator functions', function () {
-    it('should return false with non-generator function', function () {
-      assert(!isGenerator.fn(null));
-      assert(!isGenerator.fn(25));
-      assert(!isGenerator.fn('test'));
-      assert(!isGenerator.fn(function () {}));
-    });
+  test('generator functions', function () {
+    test('should return false with non-generator function', function () {
+      test.ok(!isGenerator.fn(null))
+      test.ok(!isGenerator.fn(25))
+      test.ok(!isGenerator.fn('test'))
+      test.ok(!isGenerator.fn(function () {}))
+    })
 
-    it('should return true with a generator function', function () {
-      assert(isGenerator.fn(function* () { yield 'something'; }));
-    });
-  });
-});
+    test('should return true with a generator function', function () {
+      test.ok(isGenerator.fn(function * () { yield 'something' }))
+    })
+  })
+})

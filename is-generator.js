@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * Check whether an object is a generator.
  *
