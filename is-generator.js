@@ -1,14 +1,20 @@
 /**
+ * Export generator function checks.
+ */
+module.exports = isGenerator
+module.exports.fn = isGeneratorFunction
+
+/**
  * Check whether an object is a generator.
  *
  * @param  {Object}  obj
  * @return {Boolean}
  */
-exports = module.exports = function (obj) {
+function isGenerator (obj) {
   return obj &&
     typeof obj.next === 'function' &&
-    typeof obj.throw === 'function';
-};
+    typeof obj.throw === 'function'
+}
 
 /**
  * Check whether a function is generator.
@@ -16,7 +22,7 @@ exports = module.exports = function (obj) {
  * @param  {Function} fn
  * @return {Boolean}
  */
-exports.fn = function (fn) {
+function isGeneratorFunction (fn) {
   return typeof fn === 'function' &&
-    fn.constructor.name === 'GeneratorFunction';
-};
+    fn.constructor.name === 'GeneratorFunction'
+}
