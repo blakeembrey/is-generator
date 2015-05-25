@@ -9,12 +9,12 @@ describe('is-generator', function () {
       assert(!isGenerator(null))
       assert(!isGenerator(25))
       assert(!isGenerator('test'))
-      assert(!isGenerator(function () {}))
-      assert(!isGenerator(function * () {}))
+      assert(!isGenerator(/* istanbul ignore next */ function () {}))
+      assert(!isGenerator(/* istanbul ignore next */ function * () {}))
     })
 
     it('should return true with a generator', function () {
-      assert(isGenerator((function * () {})()))
+      assert(isGenerator((/* istanbul ignore next */ function * () {})()))
     })
   })
 
@@ -23,11 +23,11 @@ describe('is-generator', function () {
       assert(!isGenerator.fn(null))
       assert(!isGenerator.fn(25))
       assert(!isGenerator.fn('test'))
-      assert(!isGenerator.fn(function () {}))
+      assert(!isGenerator.fn(/* istanbul ignore next */ function () {}))
     })
 
     it('should return true with a generator function', function () {
-      assert(isGenerator.fn(function * () { yield 'something' }))
+      assert(isGenerator.fn(/* istanbul ignore next */ function * () { yield 'something' }))
     })
   })
 })
