@@ -19,12 +19,12 @@ npm install is-generator --save
 var isGenerator = require('is-generator')
 var isGeneratorFn = require('is-generator').fn
 
-isGenerator(null)                //=> false
-isGenerator(function * () {})     //=> false
+isGenerator(null) //=> false
+isGenerator(function * () {}) //=> false
 isGenerator((function * () {})()) //=> true
 
-isGeneratorFn(null)            //=> false
-isGeneratorFn(function () {})  //=> false
+isGeneratorFn(null) //=> false
+isGeneratorFn(function () {}) //=> false
 isGeneratorFn(function * () {}) //=> true
 ```
 
