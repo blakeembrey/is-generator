@@ -25,6 +25,5 @@ function isGenerator (obj) {
 function isGeneratorFunction (fn) {
   return typeof fn === 'function' &&
     fn.constructor &&
-    fn.constructor.name === 'GeneratorFunction' &&
-    isGenerator(fn.prototype)
+    fn.constructor.name === 'GeneratorFunction'
 }
