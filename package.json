@@ -4,7 +4,7 @@
   "description": "Check whether a value is a generator or generator function",
   "main": "is-generator.js",
   "scripts": {
-    "test": "node --harmony-generators node_modules/.bin/istanbul cover _mocha --require . -- -R spec"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/blakeembrey/is-generator",
   "devDependencies": {
-    "istanbul": "git://github.com/gotwarlost/istanbul#harmony",
-    "mocha": "^1.21.4"
+    "assertit": "^0.1.0"
   }
 }

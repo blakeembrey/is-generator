@@ -1,11 +1,18 @@
-language: node_js
-
+sudo: false
+language: "node_js"
 notifications:
   email:
     on_success: never
     on_failure: change
-
 node_js:
-  - "0.11"
-
-after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"
+  - "0.12"
+  - "iojs"
+before_script:
+  - npm install standard
+  - standard
+script:
+  - npm install istanbul-harmony
+  - istanbul cover test.js --report lcovonly
+after_script:
+  - npm install coveralls
+  - cat ./coverage/lcov.info | coveralls
