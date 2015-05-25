@@ -30,6 +30,7 @@
   "devDependencies": {
     "istanbul": "git://github.com/gotwarlost/istanbul#harmony",
     "mocha": "^1.21.4",
+    "pre-commit": "^1.0.7",
     "standard": "^3.11.1"
   }
 }
