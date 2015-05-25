@@ -24,6 +24,11 @@ describe('is-generator', function () {
       assert(!isGenerator.fn(25))
       assert(!isGenerator.fn('test'))
       assert(!isGenerator.fn(/* istanbul ignore next */ function () {}))
+
+      var noConstructorFn = /* istanbul ignore next */ function () {}
+      noConstructorFn.constructor = undefined
+
+      assert(!isGenerator.fn(noConstructorFn))
     })
 
     it('should return true with a generator function', function () {
