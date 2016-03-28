@@ -41,9 +41,10 @@ describe('is-generator', function () {
     })
 
     it('should return false with a fake generator function', function () {
-      var f = function NotAGenerator () {}
-      f.constructor = { name: 'GeneratorFunction' }
-      assert(!isGenerator.fn(f))
+      var fake = function notAGenerator () {},
+        legit = function * someLegitGenerator () { return }
+      fake.constructor = legit.constructor
+      assert(!isGenerator.fn(fake))
     })
   })
 })
