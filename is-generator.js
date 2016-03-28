@@ -29,8 +29,5 @@ function * aRealGeneratorFunc () {
  * @return {Boolean}
  */
 function isGeneratorFunction (fn) {
-  return typeof fn === 'function' &&
-    fn.constructor &&
-    (!Object.hasOwnProperty.call(fn, 'constructor')) &&
-    fn.constructor === aRealGeneratorFunc.constructor
+  return (fn instanceof aRealGeneratorFunc.constructor)
 }
