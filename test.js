@@ -35,6 +35,11 @@ describe('is-generator', function () {
       assert(isGenerator.fn(/* istanbul ignore next */ function * () { yield 'something' }))
     })
 
+    it('should return true with a generator function even if it does not yield', function () {
+      var f = function * iDontYield () { return }
+      assert(isGenerator.fn(f))
+    })
+
     it('should return false with a fake generator function', function () {
       var f = function NotAGenerator () {}
       f.constructor = { name: 'GeneratorFunction' }
