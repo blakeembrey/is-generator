@@ -44,6 +44,15 @@ describe('is-generator', function () {
       var fake = function notAGenerator () {},
         legit = function * someLegitGenerator () { return }
       fake.constructor = legit.constructor
+      // Detectable by:
+      assert(Object.hasOwnProperty.call(fake, 'constructor'))
+      assert(!isGenerator.fn(fake))
+
+      // so get rid of that:
+      fake = Object.create(fake)
+      assert(!Object.hasOwnProperty.call(fake, 'constructor'))
+      // but now it's not a function anymore:
+      assert.equal(typeof fake, 'object')
       assert(!isGenerator.fn(fake))
     })
   })
