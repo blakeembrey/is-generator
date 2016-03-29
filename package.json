@@ -1,6 +1,6 @@
 {
   "name": "is-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Check whether a value is a generator or generator function",
   "main": "is-generator.js",
   "scripts": {
