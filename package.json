@@ -14,8 +14,13 @@
     "url": "git://github.com/blakeembrey/is-generator.git"
   },
   "keywords": [
+    "generator",
+    "generator function",
+    "yield",
     "function",
-    "generators"
+    "await",
+    "es6",
+    "function*"
   ],
   "author": {
     "name": "Blake Embrey",
