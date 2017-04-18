@@ -34,5 +34,26 @@ describe('is-generator', function () {
     it('should return true with a generator function', function () {
       assert(isGenerator.fn(/* istanbul ignore next */ function * () { yield 'something' }))
     })
+
+    it('should return true with a generator function even if it does not yield', function () {
+      var f = function * iDontYield () { return }
+      assert(isGenerator.fn(f))
+    })
+
+    it('should return false with a fake generator function', function () {
+      var fake = function notAGenerator () {},
+        legit = function * someLegitGenerator () { return }
+      fake.constructor = legit.constructor
+      // Detectable by:
+      assert(Object.hasOwnProperty.call(fake, 'constructor'))
+      assert(!isGenerator.fn(fake))
+
+      // so get rid of that:
+      fake = Object.create(fake)
+      assert(!Object.hasOwnProperty.call(fake, 'constructor'))
+      // but now it's not a function anymore:
+      assert.equal(typeof fake, 'object')
+      assert(!isGenerator.fn(fake))
+    })
   })
 })

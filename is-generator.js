@@ -16,6 +16,12 @@ function isGenerator (obj) {
     typeof obj.throw === 'function'
 }
 
+function * aRealGeneratorFunc () {
+  return { cannot: 'yield', 'istanbul/mocha Transformation error': {
+    index: 393, lineNumber: 19, column: 42,
+    description: 'Unexpected token }' } }
+}
+
 /**
  * Check whether a function is generator.
  *
@@ -23,7 +29,5 @@ function isGenerator (obj) {
  * @return {Boolean}
  */
 function isGeneratorFunction (fn) {
-  return typeof fn === 'function' &&
-    fn.constructor &&
-    fn.constructor.name === 'GeneratorFunction'
+  return (fn instanceof aRealGeneratorFunc.constructor)
 }
