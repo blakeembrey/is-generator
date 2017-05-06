@@ -1,11 +1,10 @@
 # Is Generator
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/is-generator.svg)](https://greenkeeper.io/)
-
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
+[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/is-generator.svg)](https://greenkeeper.io/)
 
 > Check whether a value is a generator or generator function.
 
