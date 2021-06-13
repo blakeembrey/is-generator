@@ -11,9 +11,9 @@ module.exports.fn = isGeneratorFunction
  * @return {Boolean}
  */
 function isGenerator (obj) {
-  return obj &&
-    typeof obj.next === 'function' &&
-    typeof obj.throw === 'function'
+  return typeof obj == "object" && 
+    obj !== null && 
+    obj.constructor instanceof GeneratorFunction;
 }
 
 /**
@@ -23,7 +23,5 @@ function isGenerator (obj) {
  * @return {Boolean}
  */
 function isGeneratorFunction (fn) {
-  return typeof fn === 'function' &&
-    fn.constructor &&
-    fn.constructor.name === 'GeneratorFunction'
+  return fn instanceof GeneratorFunction
 }
